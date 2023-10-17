@@ -1,0 +1,95 @@
+/* Define variables as regular CSS variables (if not using a preprocessor) */
+:root {
+  --color-grey: grey;
+  --color-grey-dark: #333;
+}
+
+.loading-container {
+  min-height: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.loading-container::after {
+  content: "BE HAPPY AND EAT PASTA";
+  color: var(--color-grey);
+  font-size: 30px;
+  text-align: center;
+  display: block;
+  letter-spacing: 2px;
+  font-family: "comic sans";
+}
+
+.smiley {
+  position: relative;
+  height: 100px;
+  width: 40px;
+  display: inline-block;
+  margin: 0 5px 10px;
+  cursor: pointer;
+}
+
+.smiley:hover > * {
+  border-color: var(--color-grey);
+  color: var(--color-grey);
+  animation: jump 0.5s infinite alternate;
+}
+
+.smiley > * {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 30px;
+  text-align: center;
+  width: 38px;
+  color: var(--color-grey-dark);
+  padding: 0 0 8px;
+  border-radius: 50%;
+  margin: 100px auto;
+  font-size: 18px;
+  font-family: "comic sans ms", sans-serif;
+  font-weight: bold;
+  transition: color 0.25s linear, border-color 0.25s linear;
+  animation: jump 0.5s infinite alternate;
+}
+
+.smiley .one {
+  color: #f9ca24;
+  animation-delay: 0s;
+}
+
+.smiley .two {
+  color: #f0932b;
+  animation-delay: 0.1s;
+}
+
+.smiley .three {
+  animation-delay: 0.2s;
+}
+
+.smiley .four {
+  color: #eb4d4b;
+  animation-delay: 0.3s;
+}
+
+.smiley .five {
+  color: #6ab04c;
+  animation-delay: 0.4s;
+}
+
+@keyframes jump {
+  0% {
+    top: -40px;
+    transform: scale(1, 0.7);
+  }
+  30% {
+    transform: scale(1, 1);
+  }
+  100% {
+    top: -70px;
+  }
+}
